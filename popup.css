@@ -1,0 +1,25 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* visibility: hidden;
+  opacity: 0; 
+  transition: visibility .2s,opacity .2s linear; */
+}
+
+.popup__container {
+
+}
+
+.popup__image {
+
+}
+
+.popup__text {
+  
+}

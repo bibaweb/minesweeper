@@ -1,6 +1,12 @@
 .page {
   margin: 0 auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+}
+
+.game {
+  margin: 0 auto;
+  /* position: relative; */
 }
 
 .game__title {
@@ -101,6 +107,7 @@
   background-position: center;
   background-color: #ff9d9d;
 }
+
 .game__flag {
   background-image: url(./images/flag.png);
   background-repeat: no-repeat;

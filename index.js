@@ -83,8 +83,6 @@ function createBoard() {
   }
 }
 
-// createBoard();
-
  //Добавить флаг при клике правой кнопкой
 function addFlag(square) {
   if (isGameOver) return;
@@ -98,7 +96,6 @@ function addFlag(square) {
       flags--;
     }
   }
-
 }
 
 //Функция, обрабатывающая клики по квадратам
@@ -215,7 +212,6 @@ function checkForWin() {
       console.log('WIN');
       startButton.classList.add('game__button_win');
       isGameOver = true;
-      squares = [];
     }
   }
 }
@@ -225,6 +221,7 @@ startButton.addEventListener('mousedown', () => {
   grid.textContent = '';
   isGameOver = false;
   squares = [];
+  flags = 0;
   createBoard();
   startButton.classList.remove('game__button_finished');
   startButton.classList.add('game__button_pressed');
@@ -232,9 +229,9 @@ startButton.addEventListener('mousedown', () => {
 startButton.addEventListener('mouseup', () => {
   startButton.classList.remove('game__button_pressed');
 })
-// grid.addEventListener('mousedown', () => {
-//   startButton.classList.add('game__button_pressed');
-// })
-// grid.addEventListener('mouseup', () => {
-//   startButton.classList.remove('game__button_pressed');
-// })
+grid.addEventListener('mousedown', () => {
+  startButton.classList.add('game__button_pressed');
+})
+grid.addEventListener('mouseup', () => {
+  startButton.classList.remove('game__button_pressed');
+})

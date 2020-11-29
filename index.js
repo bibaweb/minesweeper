@@ -18,7 +18,8 @@
 
 
 //Код игры
-let grid = document.querySelector('.game__grid');
+const grid = document.querySelector('.game__grid');
+const popupImage = document.querySelector('.popup__image');
 let width = 10;
 let bombAmount = 20;
 let flags = 0;
@@ -199,6 +200,12 @@ function gameOver() {
       square.classList.add('game__bomb_active');
     }
   })
+
+  setTimeout(() => {
+    popupImage.src = './images/cartoonboom.png';
+    popupImage.alt = 'Взрыв';
+    popup.open();
+  }, 30)
 }
 
 function checkForWin() {
@@ -211,6 +218,9 @@ function checkForWin() {
     if (matches ===bombAmount) {
       console.log('WIN');
       startButton.classList.add('game__button_win');
+      popupImage.src = './images/win2.png';
+      popupImage.alt = 'Победа';
+      popup.open();
       isGameOver = true;
     }
   }
@@ -235,3 +245,4 @@ grid.addEventListener('mousedown', () => {
 grid.addEventListener('mouseup', () => {
   startButton.classList.remove('game__button_pressed');
 })
+

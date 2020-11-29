@@ -7,24 +7,41 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="popup.css">
   <link rel="shortcut icon" href="./images/bomb.ico" type="image/x-icon">
-  <title>MINESWEEPER</title>
+  <title>САПЕР</title>
 </head>
 
 <body class="page">
   <div class="game">
     <h1 class="game__title">Игра Сапер</h1>
-    <button class="game__button" type="button"></button>
-    <div class="game__grid">
+    <div class="game__container">
+      <!-- <div class="game__flags"></div> -->
+      <button class="game__button" type="button"></button>
+      <!-- <div class="game__time"></div> -->
+      <div class="game__grid">
+      </div>
     </div>
+    <h2 class="game__h2">Правила:</h2>
+    <p class="game__rules">1. На игровом поле спрятано 20 бомб. Ваша задача – открыть поле, вычислив все квадраты с
+      бомбами.<br />
+      2. Начните игру, нажав на смайлик "&#128524; " и любой появившийся квадрат.<br />
+      3. Цифра в квадрате означает количество расположенных рядом с квадратом бомб. <br />
+      4. Если вы считаете, что в квадрате спрятана бомба, пометьте его флажком "&#128681;", кликнув правой кнопкой
+      мыши.<br />
+      4. Проиграв, попробуйте ещё раз, нажав смайлик "&#128565; ".
+    </p>
     <!-- <button type="button" class="game__theme">Сменить тему</button> -->
   </div>
 
   <div class="popup">
     <div class="popup__container">
-      <img src="./images/boom.png" alt="" class="popup__image">
-      <p class="popup__text"></p>
+      <button class="popup__close-icon" type="button"></button>
+      <img src="" alt="" class="popup__image">
     </div>
   </div>
+
+  <footer class="footer">
+    <p class="footer__author">&copy; Made by A.Biba</p>
+  </footer>
 
   <script src="index.js"></script>
   <script src="popup.js"></script>

@@ -1,18 +1,39 @@
 .page {
   margin: 0 auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: relative;
+  font-size: 1rem;
+  /* position: relative; */
+
+  /* sticky footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .game {
   margin: 0 auto;
   /* position: relative; */
+
+  /* sticky footer */
+  flex: 1 0 auto;
 }
 
 .game__title {
   text-align: center;
   margin: 35px 0;
-  font-size: 40px;
+  font-size: 2rem;
+}
+
+.game__container {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border: #939393 1px solid;
+  border-radius: 2%;
+  background-color: #f2f2f2;
+  width: 440px;
+  /* display: flex;
+  flex-direction: column; */
+
 }
 
 .game__button {
@@ -21,7 +42,7 @@
   margin: 35px auto 10px;
   outline: none;
   border-radius: 5%;
-  border: black 1px solid;
+  border: #939393 1px solid;
   box-shadow: 1px 1px 1px #d8d8d8;
   display: block;
   background-image: url(./images/smiley.png);
@@ -45,13 +66,15 @@
 }
 
 .game__grid {
+  position: relative;
   margin: 0 auto;
   height: 420px;
   width: 420px;
   display: flex;
   flex-wrap: wrap;
   background-color: #d8d8d8;
-  border: black 1px solid;
+  border: #939393 1px solid;
+  border-radius: 1%;
 }
 
 .game__square {
@@ -64,6 +87,11 @@
   box-shadow: inset 1px 1px 3px #f9f3eb;
   font-size: 20px;
   font-weight: bold;
+  transition: opacity 0.2s linear;
+}
+
+.game__square:hover {
+  opacity: 0.8;
 }
 
 .game__square_checked {
@@ -113,6 +141,33 @@
   background-repeat: no-repeat;
   background-size: 30px 30px;
   background-position: center;
+}
+
+.game__h2 {
+  margin: 45px 0 30px 15px;
+  padding: 0;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+.game__rules {
+  margin: 0;
+  padding: 0;
+  line-height: 1.9;
+  font-weight: 300;
+  width: 780px;
+}
+
+.footer {
+  margin-top: 35px;
+  flex: none;
+}
+
+.footer__author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.75rem;
+  text-align: right;
+  margin-right: 25px;
 }
 
 /* цвета полей */

@@ -7,19 +7,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* visibility: hidden;
+  visibility: hidden;
+  background-color: rgba(0,0,0,.3);
   opacity: 0; 
-  transition: visibility .2s,opacity .2s linear; */
+  transition: visibility .2s, opacity .2s linear;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1; 
 }
 
 .popup__container {
+  margin: 0;
+  position: relative;
+  top: 0px;
+}
 
+.popup__close-icon {
+  position: absolute;
+  top: -45px;
+  right: -90px;
+  background-image: url('./images/close-icon.svg');
+  background-size: 30px 30px;
+  background-color: #9699bb;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  border: black 1px solid;
 }
 
 .popup__image {
-
-}
-
-.popup__text {
-  
+  width: 400px;
+  object-fit: cover;
 }

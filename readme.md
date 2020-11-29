@@ -5,11 +5,7 @@
 * CSS
 * JavaScript
 * Flexbox
-* Медиазапросы
-* Аудио-файлы
+* ООП
 * Рекурсия
-
-<!-- ## Первые попытки:
-* озвучить действия -->
 
 [Ссылка на проект в GitHub Pages](https://bibaweb.github.io/minesweeper/)

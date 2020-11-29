@@ -44,11 +44,11 @@ function createBoard() {
     grid.appendChild(square);
     squares.push(square);
 
-    //обычный клик по квадрату
+    //Обычный клик по квадрату
     square.addEventListener('click', function (e) {
       click(square);
     })
-    // ctr + left click
+    //Поставить флажок
     square.oncontextmenu = function(e) {
       e.preventDefault();
       addFlag(square);
@@ -190,7 +190,6 @@ function checkSquare(currentId) {
 }
 
 function gameOver() {
-  console.log('END');
   startButton.classList.add('game__button_finished');
   isGameOver = true;
 
@@ -216,7 +215,6 @@ function checkForWin() {
       matches++;
     }
     if (matches ===bombAmount) {
-      console.log('WIN');
       startButton.classList.add('game__button_win');
       popupImage.src = './images/win2.png';
       popupImage.alt = 'Победа';

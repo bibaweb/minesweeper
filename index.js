@@ -20,6 +20,7 @@
 //Код игры
 const grid = document.querySelector('.game__grid');
 const popupImage = document.querySelector('.popup__image');
+const bombsNum = document.querySelector('.game__bombs-num');
 let width = 10;
 let bombAmount = 20;
 let flags = 0;
@@ -91,6 +92,7 @@ function addFlag(square) {
     if (!square.classList.contains('game__flag')) {
       square.classList.add('game__flag');
       flags++;
+      bombsNum.textContent = bombAmount - flags;
       checkForWin();
     } else {
       square.classList.remove('game__flag');
@@ -230,8 +232,10 @@ startButton.addEventListener('mousedown', () => {
   isGameOver = false;
   squares = [];
   flags = 0;
+  bombsNum.textContent = bombAmount - flags;
   createBoard();
   startButton.classList.remove('game__button_finished');
+  startButton.classList.remove('game__button_win');
   startButton.classList.add('game__button_pressed');
 })
 startButton.addEventListener('mouseup', () => {

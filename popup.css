@@ -21,7 +21,7 @@
 .popup__container {
   margin: 0;
   position: relative;
-  top: 0px;
+  top: -30px;
 }
 
 .popup__close-icon {

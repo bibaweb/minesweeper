@@ -10,14 +10,6 @@
   box-shadow: 1px 1px 1px #d8d8d8;
   color: #585858;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
   align-items: flex-end;
-}
-
-.game__minutes {
-
-}
-
-.game__seconds {
-  
 }

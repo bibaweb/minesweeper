@@ -1,31 +1,17 @@
-// document.addEventListener('DOMContentLoad', () => {}) // нужен, если разместить скрипт до body
 
-//Изменить цвет поля
-// const themeButton = document.querySelector('.game__theme');
-// themeButton.addEventListener('click', () => {
-//   grid.classList.toggle('game__grid_pastel');
-//   document.querySelectorAll('.game__square_checked').forEach(elem => {
-//     elem.classList.toggle('game__square_checked-pastel');
-//   })
-//   // document.querySelectorAll('.game__bomb').classList.toggle('game__bomb_active-pastel');
-//   document.querySelectorAll('.game__bomb_active').forEach(elem => {
-//     elem.classList.toggle('game__bomb_active-pastel');
-//   })
-//   // document.querySelector('.game__square_checked').classList.toggle('game__square_one-pastel');
-//   // document.querySelector('.game__square_checked').classList.toggle('game__square_two-pastel');
-//   // document.querySelector('.game__square_checked').classList.toggle('game__square_three-pastel');
-// })
+// import StopWatch from './stopwatch';
 
 
-//Код игры
 const grid = document.querySelector('.game__grid');
 const popupImage = document.querySelector('.popup__image');
 const bombsNum = document.querySelector('.game__bombs-num');
+const startButton = document.querySelector('.game__button');
 let width = 10;
 let bombAmount = 20;
 let flags = 0;
 let squares = [];
 let isGameOver = false;
+let clicks = 0; //при первом клике запускается таймер
 
 // Создать игровое поле
 function createBoard() {
@@ -85,7 +71,7 @@ function createBoard() {
   }
 }
 
- //Добавить флаг при клике правой кнопкой
+ //Добавить цветок при клике правой кнопкой
 function addFlag(square) {
   if (isGameOver) return;
   if (!square.classList.contains('game__square_checked') && (flags < bombAmount)) {
@@ -103,11 +89,18 @@ function addFlag(square) {
 
 //Функция, обрабатывающая клики по квадратам
 function click(square) {
+  //запустить таймер
+  clicks++
+  if (clicks === 1) {
+    stopwatch.setInterval();
+  }
+
   let currentId = square.id;
   if (isGameOver) return;
   if (square.classList.contains('game__square_checked') || square.classList.contains('game__flag')) return;
   if (square.classList.contains('game__bomb')) {
     gameOver();
+    stopwatch.stopTime();
   } else {
     let total = square.getAttribute('data');
     if (total != 0) { //вывести в квадрат цифру, если квадрат граничит с бомбой
@@ -147,6 +140,7 @@ function checkSquare(currentId) {
   const isLeftEdge = (currentId % width === 0); //Левый край
   const isRightEdge = (currentId % width === width - 1); //Правый край
 
+  //Рекурсия
   setTimeout(() => { //setTimeout позволяет вызвать функцию один раз через определённый интервал времени.
     if (currentId > 0 && !isLeftEdge) {
       const newId = parseInt(currentId) -1;  //квадрат слева
@@ -222,12 +216,14 @@ function checkForWin() {
       popupImage.alt = 'Победа';
       popup.open();
       isGameOver = true;
+      stopwatch.stopTime();
     }
   }
 }
 
-const startButton = document.querySelector('.game__button');
+
 startButton.addEventListener('mousedown', () => {
+  stopwatch.resetTime();
   grid.textContent = '';
   isGameOver = false;
   squares = [];
@@ -248,3 +244,22 @@ grid.addEventListener('mouseup', () => {
   startButton.classList.remove('game__button_pressed');
 })
 
+
+
+// document.addEventListener('DOMContentLoad', () => {}) // нужен, если разместить скрипт до body
+
+//Изменить цвет поля
+// const themeButton = document.querySelector('.game__theme');
+// themeButton.addEventListener('click', () => {
+//   grid.classList.toggle('game__grid_pastel');
+//   document.querySelectorAll('.game__square_checked').forEach(elem => {
+//     elem.classList.toggle('game__square_checked-pastel');
+//   })
+//   // document.querySelectorAll('.game__bomb').classList.toggle('game__bomb_active-pastel');
+//   document.querySelectorAll('.game__bomb_active').forEach(elem => {
+//     elem.classList.toggle('game__bomb_active-pastel');
+//   })
+//   // document.querySelector('.game__square_checked').classList.toggle('game__square_one-pastel');
+//   // document.querySelector('.game__square_checked').classList.toggle('game__square_two-pastel');
+//   // document.querySelector('.game__square_checked').classList.toggle('game__square_three-pastel');
+// })

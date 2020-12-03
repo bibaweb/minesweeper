@@ -228,6 +228,7 @@ startButton.addEventListener('mousedown', () => {
   isGameOver = false;
   squares = [];
   flags = 0;
+  clicks = 0;
   bombsNum.textContent = bombAmount - flags;
   createBoard();
   startButton.classList.remove('game__button_finished');

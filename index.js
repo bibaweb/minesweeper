@@ -1,7 +1,3 @@
-
-// import StopWatch from './stopwatch';
-
-
 const grid = document.querySelector('.game__grid');
 const popupImage = document.querySelector('.popup__image');
 const bombsNum = document.querySelector('.game__bombs-num');
@@ -78,13 +74,18 @@ function addFlag(square) {
     if (!square.classList.contains('game__flag')) {
       square.classList.add('game__flag');
       flags++;
-      bombsNum.textContent = bombAmount - flags;
       checkForWin();
     } else {
       square.classList.remove('game__flag');
       flags--;
     }
   }
+  if (!square.classList.contains('game__square_checked') && (flags === 20) && square.classList.contains('game__flag')) {
+    square.classList.remove('game__flag');
+    flags--;
+}
+  bombsNum.textContent = bombAmount - flags;
+  console.log(flags)
 }
 
 //Функция, обрабатывающая клики по квадратам

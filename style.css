@@ -2,7 +2,6 @@
   margin: 0 auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
-  /* position: relative; */
 
   /* sticky footer */
   min-height: 100vh;
@@ -12,7 +11,6 @@
 
 .game {
   margin: 0 auto;
-  /* position: relative; */
 
   /* sticky footer */
   flex: 1 0 auto;
@@ -31,9 +29,6 @@
   border-radius: 2%;
   background-color: #f2f2f2;
   width: 440px;
-  /* display: flex;
-  flex-direction: column; */
-
 }
 
 .game__data {
@@ -68,8 +63,6 @@
 .game__button {
   width: 45px;
   height: 45px;
-  /* margin: 15px auto 10px; */
-  /* display: block; */
   outline: none;
   border-radius: 5%;
   border: #939393 1px solid;
@@ -124,7 +117,6 @@
 }
 
 .game__square_checked {
-  /* background-color: #9d9d9d; */
   background-color: #9699bb;
   box-shadow: none;
 }
@@ -198,55 +190,3 @@
   text-align: right;
   margin-right: 25px;
 }
-
-/* цвета полей */
-/* .game__theme {
-  margin: 35px auto;
-  padding: 10px;
-  display: block;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
-  outline: none;
-  cursor: pointer;
-  background-color: #e4f2ff;
-}
-
-.game__grid_pastel {
-  background-color: #f1e8e1;
-}
-
-.game__square_checked-pastel {
-  background-color: #d3cfde;
-}
-
-.game__square_one-pastel {
-  color: #ffebf5;
-}
-
-.game__square_two-pastel {
-  color: #c4ffff;
-}
-
-.game__square_three-pastel {
-  color: #e4fff2;
-}
-
-.game__square_four-pastel {
-  color: #9f9fff;
-}
-
-.game__square_five-pastel {
-  color: #ffffe4;
-}
-
-.game__square_six-pastel {
-  color: #ffe5cb;
-}
-
-.game__square_seven-pastel {
-  color: #ffe6e6;
-}
-
-.game__bomb_active-pastel {
-  background-color: #d8afa7;
-} */

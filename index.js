@@ -1,3 +1,10 @@
+import Popup from './popup.js';
+import Stopwatch from './stopwatch.js'
+const popup = new Popup('.popup');
+popup.setEventListeners();
+
+const stopwatch = new Stopwatch();
+
 const grid = document.querySelector('.game__grid');
 const popupImage = document.querySelector('.popup__image');
 const bombsNum = document.querySelector('.game__bombs-num');
@@ -28,7 +35,7 @@ function createBoard() {
     squares.push(square);
 
     //Обычный клик по квадрату
-    square.addEventListener('click', function (e) {
+    square.addEventListener('click', function () {
       click(square);
     })
     //Поставить флажок
@@ -54,13 +61,6 @@ function createBoard() {
       if (i<90 && squares[i +width].classList.contains('game__bomb')) total++ //<=89 //если квадрат снизу содержит бомбу
       if (i<90 && !isLeftEdge && squares[i -1 +width].classList.contains('game__bomb')) total++ //если соседний квадрат слева снизу содержит бомбу
       if (i<99 && !isRightEdge && squares[i +1].classList.contains('game__bomb')) total++ // если соседний квадрат справа содержит бомбу
-      
-      //добавлены из комментов в ютьбе
-      // if ( i > 9 && !isLeftEdge && squares[i -width + 1].classList.contains('game__bomb')) total++
-      // if (i > 9 && squares[i - width].classList.contains('game__bomb')) total++ //квадрат сверху содержит бомбу
-      // if ( i < 90 && !isRightEdge && squares[i + (width + 1)].classList.contains('game__bomb')) total++
-      // if (i < 90 && squares[i + width].classList.contains('game__bomb')) total++
-      // if (i === 98 && squares[i + 1].classList.contains("bomb")) total++;
 
       squares[i].setAttribute('data', total);
     }

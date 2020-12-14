@@ -1,5 +1,4 @@
-// export default class StopWatch {
-class StopWatch {
+export default class StopWatch {
   constructor() {
     this.minutes = 0;
     this.seconds = 0;
@@ -49,5 +48,3 @@ class StopWatch {
     this.secBLock.textContent = '00';
   }
 }
-
-const stopwatch = new StopWatch();

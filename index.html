@@ -12,49 +12,49 @@
   <title>САПЕР</title>
 </head>
 
-<body class="page">
-  <div class="game">
-    <h1 class="game__title">Игра Сапер</h1>
-    <div class="game__container">
-      <div class="game__data">
-      <div class="game__bombs">
-        <p class="game__bombs-num"></p>
+<body>
+  <div class="page">
+    <main class="game">
+      <h1 class="game__title">Игра Сапер</h1>
+      <div class="game__container">
+        <div class="game__data">
+          <div class="game__bombs">
+            <p class="game__bombs-num"></p>
+          </div>
+          <button class="game__button" type="button"></button>
+          <div class="game__time">
+            <span class="game__minutes"></span>
+            <span class="game__seconds"></span>
+          </div>
+        </div>
+        <div class="game__grid">
+        </div>
       </div>
-      <button class="game__button" type="button"></button>
-      <div class="game__time">
-        <span class="game__minutes"></span>
-        <span class="game__seconds"></span>
+      <h2 class="game__h2">Правила:</h2>
+      <p class="game__rules">1. На игровом поле спрятано 20 бомб. Ваша задача – открыть поле, вычислив все квадраты с
+        бомбами.<br />
+        2. Начните игру, нажав на смайлик "&#128524; " и любой появившийся квадрат.<br />
+        3. Цифра в квадрате означает количество расположенных рядом с квадратом бомб. <br />
+        4. Если вы считаете, что в квадрате спрятана бомба, обезвредьте её, кликнув по квадрату правой кнопкой
+        мыши.<br />
+        4. Проиграв, попробуйте ещё раз, нажав смайлик "&#128565; ".
+      </p>
+    </main>
+
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close-icon" type="button"></button>
+        <img src="" alt="" class="popup__image">
       </div>
     </div>
-      <div class="game__grid">
-      </div>
-    </div>
-    <h2 class="game__h2">Правила:</h2>
-    <p class="game__rules">1. На игровом поле спрятано 20 бомб. Ваша задача – открыть поле, вычислив все квадраты с
-      бомбами.<br />
-      2. Начните игру, нажав на смайлик "&#128524; " и любой появившийся квадрат.<br />
-      3. Цифра в квадрате означает количество расположенных рядом с квадратом бомб. <br />
-      4. Если вы считаете, что в квадрате спрятана бомба, обезвредьте её, кликнув по квадрату правой кнопкой
-      мыши.<br />
-      4. Проиграв, попробуйте ещё раз, нажав смайлик "&#128565; ".
-    </p>
-    <!-- <button type="button" class="game__theme">Сменить тему</button> -->
+
+    <footer class="footer">
+      <p class="footer__author">&copy; Made by A.Biba</p>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+
   </div>
-
-  <div class="popup">
-    <div class="popup__container">
-      <button class="popup__close-icon" type="button"></button>
-      <img src="" alt="" class="popup__image">
-    </div>
-  </div>
-
-  <footer class="footer">
-    <p class="footer__author">&copy; Made by A.Biba</p>
-  </footer>
-
-  <script src="index.js"></script>
-  <script src="popup.js"></script>
-  <script src="stopwatch.js"></script>
 </body>
 
 </html>

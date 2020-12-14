@@ -24,5 +24,5 @@ class Popup {
     this.closeIcon.addEventListener('click', () => this.close());
   }
 }
-const popup = new Popup('.popup');
-popup.setEventListeners();
+
+export default Popup;
